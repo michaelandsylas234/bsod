@@ -16,7 +16,7 @@ else:
         print(f"TURN #{turn_number}")
 
         input("your move.  press f to continue fighting. ")
-        yourmove = random.randint(1, 20)
+        yourmove = random.randint(1, 25)
         if yourmove > 7:
             bsodpoints = bsodpoints - 1
             print(f"you hit the BSOD.  it has {bsodpoints} left.")
