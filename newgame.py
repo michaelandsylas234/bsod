@@ -1,5 +1,12 @@
 import random
 
+def roll(sided, times):
+    sum = 0
+    for i in range(times):
+        sum = sum + random.randint(1, sided)
+    return sum
+
+
 
 print("\n-------------------------------------------------------------------------------------------------\n")
 
@@ -7,7 +14,7 @@ doyouwant = input("You see a BSOD.  It wants to kill your computer!!! Fight (f) 
 if doyouwant[0] != "f":
     print("ok, bye")
 else:
-    mypoints = 3
+    mypoints = 10
     bsodpoints = 5
     turn_number = 1
 
@@ -16,14 +23,14 @@ else:
         print(f"TURN #{turn_number}")
 
         input("your move.  press f to continue fighting. ")
-        yourmove = random.randint(1, 25)
+        yourmove = roll(20, 1)
         if yourmove > 7:
             bsodpoints = bsodpoints - 1
             print(f"you hit the BSOD.  it has {bsodpoints} left.")
         else:
             print("you missed the BSOD.  sorry!")
 
-        bsodmove = random.randint(1, 20)
+        bsodmove = roll(20, 1)
         if bsodmove > 11:
             mypoints = mypoints - 2
             print(f"the BSOD hit you.  you have {mypoints} left.")
