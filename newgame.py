@@ -1,4 +1,5 @@
 import random
+import sys
 
 def roll(sided, times):
     sum = 0
@@ -13,8 +14,21 @@ class Monster:
         self.action = action
         self.hits = hits
 
+class Player:
+    def __init__(self, name, hits):
+        self.name = name
+        self.hits = hits
+
+
 
 print("\n-------------------------------------------------------------------------------------------------\n")
+
+name = input("What is your name? ")
+if name == "tissuebox":
+    print("That name is already taken.  Sorry!")
+    sys.exit()
+    
+player = Player(name, 10)
 
 monster1 = Monster("giant rat", "kill you!", 5)
 monster2 = Monster("sheep", "baaaaa you!", 1)
@@ -26,7 +40,7 @@ else:
 
 doyouwant = input(f"You see a {monster.name}!!!  It wants to {monster.action}!!! Fight (f) or run (r)? ")
 if doyouwant[0] != "f":
-    print("Last person to play this game's a rot13 egg!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    print("Last person to play this game's a rot13 egg!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 else:
     mypoints = 10
     turn_number = 1
